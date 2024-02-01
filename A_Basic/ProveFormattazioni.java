@@ -2,13 +2,11 @@
  * Prova Formattazioni
  */
 
-package provaformattazioni;
-
 /**
  *
  * @author sandro.gallo
  */
-public class Main {
+public class ProveFormattazioni {
 
     /**
      * @param args the command line arguments
