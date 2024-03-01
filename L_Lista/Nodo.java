@@ -23,7 +23,7 @@ public class Nodo {
         return valore;
     }
 
-    public Nodo getSuccesivo(){
+    public Nodo getSuccessivo(){
         return succesivo;
     }
 
