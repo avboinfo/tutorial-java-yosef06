@@ -6,6 +6,22 @@ public class Lista {
     public Lista(){
         radice = null;
     }
+    class iteratore(){
+        private Nodo nodo;
+        this.nodo = nodo;
+
+    private iteratore(Nodo nodo){
+        this.nodo = nodo;
+    }
+
+    public hasNext(){
+        return nodo!=null;
+    }
+
+    public iteratore getIterator(){
+        iteratore i = new iteratore(nodo);
+    }
+}
     
     public boolean isEmpty(){
         return radice==null;
@@ -22,6 +38,29 @@ public class Lista {
             p.setSuccesivo( n ); 
         }
 
+    }
+    public void addSorted(Nodo n){
+        if (isEmpty()) {
+            radice = n;
+            return;
+        } 
+
+        Nodo p1 = radice;
+        Nodo p2 = radice.getSuccessivo();
+        int vN = n.getValore();
+
+        if (p1.getValore()>vN) {
+            n.setSuccessivo(radice);
+            radice = n;
+            return;
+        }
+        
+        while (vN>p1.getValore() && p2!=null && vN>p2.getValore()) {
+            p1=p2;
+            p2=p1.getSuccessivo();
+        }
+        n.setSuccessivo(p2);
+        p1.setSuccessivo(n);
     }
     public void addFirst(Nodo n){
         if(isEmpty()){
